@@ -1,7 +1,7 @@
 #include <GLFW/glfw3.h> 
-#include "imgui/imgui.h"
-#include "imgui/backends/imgui_impl_glfw.h"
-#include "imgui/backends/imgui_impl_opengl3.h"
+#include "imgui-glfw-opengl3/imgui.h"
+#include "imgui-glfw-opengl3/backends/imgui_impl_glfw.h"
+#include "imgui-glfw-opengl3/backends/imgui_impl_opengl3.h"
 #include <stdio.h>
 #include <iostream>
 

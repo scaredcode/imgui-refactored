@@ -5,14 +5,14 @@ project(imguimenu)
 
 add_executable(imguimenu
         # Add ImGui
-        imgui/imgui_demo.cpp
-        imgui/imgui_draw.cpp
-        imgui/imgui_tables.cpp
-        imgui/imgui_widgets.cpp
-        imgui/imgui.cpp
+        imgui-glfw-opengl3/imgui_demo.cpp
+        imgui-glfw-opengl3/imgui_draw.cpp
+        imgui-glfw-opengl3/imgui_tables.cpp
+        imgui-glfw-opengl3/imgui_widgets.cpp
+        imgui-glfw-opengl3/imgui.cpp
         #Add ImGui Backends (GLFW3 + OpenGL 3)
-        imgui/backends/imgui_impl_glfw.cpp
-        imgui/backends/imgui_impl_opengl3.cpp
+        imgui-glfw-opengl3/backends/imgui_impl_glfw.cpp
+        imgui-glfw-opengl3/backends/imgui_impl_opengl3.cpp
         #MAIN FILE
         main.cpp
     )
