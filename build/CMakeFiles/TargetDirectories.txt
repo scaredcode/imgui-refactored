@@ -1,3 +1,0 @@
-/home/q/projects/imguimenu/build/CMakeFiles/imguimenu.dir
-/home/q/projects/imguimenu/build/CMakeFiles/edit_cache.dir
-/home/q/projects/imguimenu/build/CMakeFiles/rebuild_cache.dir
