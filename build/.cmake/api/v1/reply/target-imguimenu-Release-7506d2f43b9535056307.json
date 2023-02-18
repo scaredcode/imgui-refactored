@@ -11,7 +11,8 @@
 		"commands" : 
 		[
 			"add_executable",
-			"target_link_libraries"
+			"target_link_libraries",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -31,7 +32,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 10,
+				"line" : 11,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 9,
 				"parent" : 0
 			}
 		]
@@ -43,6 +50,17 @@
 			[
 				{
 					"fragment" : "-O3 -DNDEBUG"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "/home/q/dev/imgui-refactored/sdl-opengl/imguimenu"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/usr/include/SDL2"
 				}
 			],
 			"language" : "CXX",
@@ -89,7 +107,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libglfw.so.3.3",
+				"fragment" : "-L/usr/lib/x86_64-linux-gnu  -lSDL2",
 				"role" : "libraries"
 			}
 		],
@@ -130,43 +148,43 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "imgui-glfw-opengl3/imgui_demo.cpp",
+			"path" : "imgui-special/imgui_demo.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "imgui-glfw-opengl3/imgui_draw.cpp",
+			"path" : "imgui-special/imgui_draw.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "imgui-glfw-opengl3/imgui_tables.cpp",
+			"path" : "imgui-special/imgui_tables.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "imgui-glfw-opengl3/imgui_widgets.cpp",
+			"path" : "imgui-special/imgui_widgets.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "imgui-glfw-opengl3/imgui.cpp",
+			"path" : "imgui-special/imgui.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "imgui-glfw-opengl3/backends/imgui_impl_glfw.cpp",
+			"path" : "imgui-special/backends/imgui_impl_sdl2.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "imgui-glfw-opengl3/backends/imgui_impl_opengl3.cpp",
+			"path" : "imgui-special/backends/imgui_impl_opengl3.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

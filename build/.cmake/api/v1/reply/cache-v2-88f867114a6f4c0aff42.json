@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/q/projects/imguimenu/build"
+			"value" : "/home/q/dev/imgui-refactored/sdl-opengl/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -139,10 +139,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/bin/clang++"
 		},
 		{
@@ -267,10 +267,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/bin/clang"
 		},
 		{
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/q/projects/imguimenu"
+			"value" : "/home/q/dev/imgui-refactored/sdl-opengl"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -621,6 +621,10 @@
 			"name" : "CMAKE_MAKE_PROGRAM",
 			"properties" : 
 			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
 				{
 					"name" : "HELPSTRING",
 					"value" : "No help, variable specified on the command line."
@@ -1238,16 +1242,16 @@
 			"value" : "OPENGL_xmesa_INCLUDE_DIR-NOTFOUND"
 		},
 		{
-			"name" : "glfw3_DIR",
+			"name" : "SDL2_DIR",
 			"properties" : 
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for glfw3."
+					"value" : "The directory containing a CMake configuration file for SDL2."
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/glfw3"
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/SDL2"
 		},
 		{
 			"name" : "imguimenu_BINARY_DIR",
@@ -1259,7 +1263,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/q/projects/imguimenu/build"
+			"value" : "/home/q/dev/imgui-refactored/sdl-opengl/build"
 		},
 		{
 			"name" : "imguimenu_IS_TOP_LEVEL",
@@ -1283,7 +1287,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/q/projects/imguimenu"
+			"value" : "/home/q/dev/imgui-refactored/sdl-opengl"
 		}
 	],
 	"kind" : "cache",
