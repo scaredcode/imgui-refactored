@@ -79,3 +79,7 @@ inline namespace categories {
     static bool cat3 = false;
     static bool cat0 = true;
 }
+
+inline namespace open {
+    static int isOpen = 0;
+}

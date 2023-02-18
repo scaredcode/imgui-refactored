@@ -1,6 +1,7 @@
 #include "imgui-glfw-opengl3/imgui.h"
 #include "includes.h"
 #include <cstdio>
+#include <type_traits>
 #define GL_SILENCE_DEPRECATION
 
 
@@ -58,73 +59,93 @@ int main(int, char**)
 
         
         {
+            ImGui::SetNextWindowPos(ImVec2(30, 30));
+            ImGui::SetNextWindowSize(ImVec2(70, 70));
+            ImGui::Begin("##brain open", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoBackground);
+            {
+                if (ImGui::Button("Open", ImVec2(60, 60))) {
+                    if (open::isOpen == 0) {
+                        open::isOpen = 1;
+                    } else if (open::isOpen == 1) {
+                        open::isOpen = 0;
+                    }
+                }
+            }
+            ImGui::End();
+
             static float f = 0.0f;
             static int counter = 0;
             //ImGui::ShowStyleEditor();
-            ImVec2 windowsize = ImVec2(650, 400);
-            ImGui::SetNextWindowSize(windowsize);
-            ImGui::Begin("menu", nullptr, ImGuiWindowFlags_NoTitleBar || ImGuiWindowFlags_NoResize);
-            //Another needs
-            ImDrawList *drawlist = ImGui::GetWindowDrawList();
-            ImStyle();
-            ImColors();
+            if (open::isOpen == 1) {
+                ImVec2 windowsize = ImVec2(650, 400);
+                ImGui::SetNextWindowSize(windowsize);
+                ImGui::Begin("menu", nullptr, ImGuiWindowFlags_NoTitleBar || ImGuiWindowFlags_NoResize || ImGuiWindowFlags_ChildWindow);
+                //Another needs
+                ImStyle();
+                ImColors();
 
-            CText("Escape Please");
-            ImGui::Separator();
+                CText("Escape Please");
+                ImGui::Separator();
 
-            // Categories
-            ImGui::PushStyleColor(ImGuiCol_ChildBg, ImColor(39, 39, 39, 225).Value);
-            ImGui::BeginChild("##Right | Category", ImVec2(150, ImGui::GetWindowSize().y - 43), true);
-            {
-                if (ImGui::Button("Visuals", ImVec2(136, 50))) {
-                    categories::cat1 = true;
-                    categories::cat2 = false;
-                    categories::cat3 = false;
-                    categories::cat0 = false;
-                }   
 
-                if (ImGui::Button("Aimbot", ImVec2(136, 50))) {
-                    categories::cat1 = false;
-                    categories::cat2 = true;
-                    categories::cat3 = false;
-                    categories::cat0 = false;
-                } 
+                int right_x = 150;
+                int left_x = 478;
 
-                if (ImGui::Button("Configs", ImVec2(136, 50))) {
-                    categories::cat1 = false;
-                    categories::cat2 = false;
-                    categories::cat3 = true;
-                    categories::cat0 = false;
-                } 
+                
+                // Categories
+                ImGui::PushStyleColor(ImGuiCol_ChildBg, ImColor(39, 39, 39, 225).Value);
+                ImGui::BeginChild("##Right | Category", ImVec2(right_x, ImGui::GetWindowSize().y - 43), true);
+                {
+                    if (ImGui::Button("Visuals", ImVec2(136, 50))) {
+                        categories::cat1 = true;
+                        categories::cat2 = false;
+                        categories::cat3 = false;
+                        categories::cat0 = false;
+                    }   
+
+                    if (ImGui::Button("Aimbot", ImVec2(136, 50))) {
+                        categories::cat1 = false;
+                        categories::cat2 = true;
+                        categories::cat3 = false;
+                        categories::cat0 = false;
+                    } 
+
+                    if (ImGui::Button("Configs", ImVec2(136, 50))) {
+                        categories::cat1 = false;
+                        categories::cat2 = false;
+                        categories::cat3 = true;
+                        categories::cat0 = false;
+                    } 
+                }
+                ImGui::EndChild();
+                ImGui::PopStyleColor();
+                //Same Line
+                ImGui::SameLine();
+                // Functions
+                ImGui::BeginChild("## Left | Functions", ImVec2(left_x, ImGui::GetWindowSize().y - 43), true);
+                {
+                    // Dev Category (default)
+                    if (categories::cat0) {
+                        ImGui::Text("Thanks for use my menu!");
+                        ImGui::Text("Telegram: https://t.me/scaredmeee");
+                    }
+
+                    if (categories::cat1) {
+                        ImGui::Text("This is Visual Category");
+                    }
+
+                    if (categories::cat2) {
+                        ImGui::Text("This is Aimbot Category");
+                    }
+
+                    if (categories::cat3) {
+                        ImGui::Text("This is category in dev mode!!!");
+                    }
+                }
+                ImGui::EndChild();
+
+                ImGui::End(); 
             }
-            ImGui::EndChild();
-            ImGui::PopStyleColor();
-            //Same Line
-            ImGui::SameLine();
-            // Functions
-            ImGui::BeginChild("## Left | Functions", ImVec2(478, ImGui::GetWindowSize().y - 43), true);
-            {
-                // Dev Category (default)
-                if (categories::cat0) {
-                    ImGui::Text("Thanks for use my menu!");
-                    ImGui::Text("Telegram: https://t.me/scaredmeee");
-                }
-
-                if (categories::cat1) {
-                    ImGui::Text("This is Visual Category");
-                }
-
-                if (categories::cat2) {
-                    ImGui::Text("This is Aimbot Category");
-                }
-
-                if (categories::cat3) {
-                    ImGui::Text("This is category in dev mode!!!");
-                }
-            }
-            ImGui::EndChild();
-
-            ImGui::End();
         }
 
         
