@@ -27,6 +27,6 @@ jobs:
       run: sudo apt install libglfw3-dev git clang ninja-build cmake && git clone https://github.com/scaredcode/imgui-glfw-opengl3
 
     - name: Configuring Cmake
-      run: cmake . --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -G Ninja
+      run: cd build && cmake  --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -S./ -B./build -G Ninja
     - name: Building With Ninja
       run: cmake --build build --config Debug --target imguimenu --
