@@ -24,7 +24,7 @@ jobs:
       run: ls
     
     - name: Instal GLFW3 && ImGui Downloading
-      run: sudo apt install libglfw3-dev git clang ninja-build cmake && git clone https://github.com/scaredcode/imgui-glfw-opengl3
+      run: sudo apt install libsdl2-dev git clang ninja-build cmake && git clone https://github.com/scaredcode/imgui-glfw-opengl3
 
     - name: Configuring Cmake
       run: cmake  --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -S./ -B./build -G Ninja
