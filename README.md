@@ -12,11 +12,11 @@ You need install glfw, cmake, ninja-build and clang
 
 Ubuntu:
 ```bash
-  sudo apt install cmake libglfw3-dev ninja-build clang
+  sudo apt install cmake libsdl2-dev ninja-build clang
 ```
 Arch/Manjaro Linux:
 ```bash
-  sudo pacman -S ninja glfw3-dev clang cmake
+  sudo pacman -S ninja sdl2-dev clang cmake
 ```
 
 
@@ -37,8 +37,6 @@ For dowlaod binary use this command:
 
 ## Last Updates
 
-February 18, 2023, 17:20: 
-```FIxed Category Names (for screamlark)```
+February 18, 2023, 22:10: 
+```Create sdl2-opengl3 branch```
 
-February 18, 2023, 17:20: 
-```Upload Normal Menu with ninja build system```

@@ -1,7 +1,13 @@
-#include <GLFW/glfw3.h> 
-#include "imgui-glfw-opengl3/imgui.h"
-#include "imgui-glfw-opengl3/backends/imgui_impl_glfw.h"
-#include "imgui-glfw-opengl3/backends/imgui_impl_opengl3.h"
+#include <SDL2/SDL.h>
+#if defined(IMGUI_IMPL_OPENGL_ES2)
+#include <SDL_opengles2.h>
+#else
+#include <SDL2/SDL_opengl.h>
+#endif
+
+#include "imgui-special/imgui.h"
+#include "imgui-special/backends/imgui_impl_sdl2.h"
+#include "imgui-special/backends/imgui_impl_opengl3.h"
 #include <stdio.h>
 #include <iostream>
 
