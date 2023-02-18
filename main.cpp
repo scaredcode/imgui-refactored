@@ -41,6 +41,9 @@ int main(int, char**)
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     io.Fonts->AddFontFromFileTTF("/home/q/projects/imguimenu/Montserrat-Regular.ttf", 18.0f);
     //ImGui::StyleColorsDark();
+    ImStyle();
+    ImColorsDark();
+    // If You need dark theme, use ImColorsLight();
     
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
@@ -59,11 +62,12 @@ int main(int, char**)
 
         
         {
+            
             ImGui::SetNextWindowPos(ImVec2(30, 30));
             ImGui::SetNextWindowSize(ImVec2(70, 70));
             ImGui::Begin("##brain open", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoBackground);
             {
-                if (ImGui::Button("Open", ImVec2(60, 60))) {
+                if (ImGui::Button("Open", ImVec2(55, 55))) {
                     if (open::isOpen == 0) {
                         open::isOpen = 1;
                     } else if (open::isOpen == 1) {
@@ -79,10 +83,8 @@ int main(int, char**)
             if (open::isOpen == 1) {
                 ImVec2 windowsize = ImVec2(650, 400);
                 ImGui::SetNextWindowSize(windowsize);
-                ImGui::Begin("menu", nullptr, ImGuiWindowFlags_NoTitleBar || ImGuiWindowFlags_NoResize || ImGuiWindowFlags_ChildWindow);
+                ImGui::Begin("menu", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoDecoration);
                 //Another needs
-                ImStyle();
-                ImColors();
 
                 CText("Escape Please");
                 ImGui::Separator();
@@ -91,7 +93,7 @@ int main(int, char**)
                 int right_x = 150;
                 int left_x = 478;
 
-                
+                // If You Use Light Theme Change r,g,b in color ImGuiCol_ChildBg
                 // Categories
                 ImGui::PushStyleColor(ImGuiCol_ChildBg, ImColor(39, 39, 39, 225).Value);
                 ImGui::BeginChild("##Right | Category", ImVec2(right_x, ImGui::GetWindowSize().y - 43), true);
@@ -116,6 +118,7 @@ int main(int, char**)
                         categories::cat3 = true;
                         categories::cat0 = false;
                     } 
+
                 }
                 ImGui::EndChild();
                 ImGui::PopStyleColor();
