@@ -1,6 +1,8 @@
 
 # ImGui Refactored
 
+[![CMake](https://github.com/scaredcode/imgui-refactored/actions/workflows/build_project.yml/badge.svg?branch=master)](https://github.com/scaredcode/imgui-refactored/actions/workflows/build_project.yml)
+
 ImGui Refactored is realy cool imgui menu
 
 Using GLFW3 and OpenGl3 For Draw
@@ -39,4 +41,5 @@ For dowlaod binary use this command:
 
 February 18, 2023, 22:10: 
 ```Create sdl2-opengl3 branch```
+
 
