@@ -33,9 +33,12 @@ For dowlaod binary use this command:
 
 ![Dont Opened](https://i.ibb.co/XLcqnCD/image.png)
 
-![Opened](https://i.ibb.co/R0WnTBG/image.png)
+![Opened](https://i.ibb.co/h8ztFP3/image.png)
 
 ## Last Updates
+
+February 18, 2023, 17:20: 
+```FIxed Category Names (for screamlark)```
 
 February 18, 2023, 17:20: 
 ```Upload Normal Menu with ninja build system```
