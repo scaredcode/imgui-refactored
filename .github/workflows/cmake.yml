@@ -21,8 +21,9 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Instal GLFW3 && ImGui DOwnloading
-      run: sudo apt install libglfw3-dev git clang && git clone https://github.com/scaredcode/imgui-glfw-opengl3
+      run: sudo apt install libglfw3-dev git clang ninja-build && git clone https://github.com/scaredcode/imgui-glfw-opengl3
 
-    - name: Building with make
-      run: make
-
+    - name: Configuring Cmake
+      run: /usr/bin/cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/clang -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/clang++ -G Ninja
+    - name: Building With Ninja
+      run: /usr/bin/cmake --build build --config Debug --target imguimenu --
